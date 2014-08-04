@@ -46,6 +46,20 @@ table {
 	border-spacing: 0;
 }
 
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
 
 /*-------------------------------------------------
 GENERAL STYLES
@@ -53,21 +67,226 @@ GENERAL STYLES
 body {
 	font-family: 'Open Sans', sans-serif;
 	line-height: 20px;
+	color: #4d4d4d;
+	text-align: left;
+	font-size: 14px;
+}
+
+h1 { 
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 24px;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+h2 { 
+	font-size: 18px;
+	font-weight: 600;
+	margin: 20px 0;
+	color: #333;
+}
+
+a {
+	color: #4472b9;
+	text-decoration: none;
+}
+
+p {
+	margin: 10px 0;
 }
 
 .container {
 
 	width: 1000px;
 	margin: 0 auto;
-	border: 1px solid #ccc;
+	border-top: none;
+	border: 1px solid #e3e3e3;
 
 	header {
-		background: black;
+		background: #264a5f;
 		color: #fff;
-		padding: 10px;
+		padding: 20px;
+		font-size: 25px;
+
+		.logo {
+			float: left;
+			width: 184px;
+			height: 58px;
+		}
+		.header-text {
+			float: right;
+			padding-top: 20px;
+			font-size: 18px;
+			font-weight: 300;
+		}
+	}
+
+	.text-input-box {
+		padding: 20px 10px 0;
+
+		.row {
+			padding: 10px 0;
+			clear: both;
+		}
+
+		label {
+			padding-bottom: 10px;
+			display: block;
+			font-weight: 600;
+		}
+
+		input {
+			display: block;
+			width: 90%;
+			height: 34px;
+			padding: 6px 12px;
+			font-size: 14px;
+			line-height: 1.42857143;
+			color: #555;
+			background-color: #FFF;
+			background-image: none;
+			border: 1px solid #CCC;
+			border-radius: 4px;
+			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+			-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+			-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+			transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		}
+
+		button {
+			margin-top: 20px;
+		}
 	}
 
 	.content {
 		padding: 10px;
 	}
+
+	.product-content {
+		margin: 20px 10px;
+
+		.first-product {
+			width: 400px;
+			float: left;
+		}
+		.second-product {
+			width: 400px;
+			float: right;
+		}
+	}
+
+
+	/* Lazada styles - override */
+	.outofstock,
+	#product_price,
+	#ratingReviewModule,
+	#prd-detail-tablist,
+	.prd-moreImages {
+		display: none;
+	}
+	#special_price_box {
+		font-size: 23px;
+	}
+	.prd-detail-wrapper {
+		padding: 15px 0;
+	}
+	#loading {
+		color: #31708F;
+		background-color: #D9EDF7;
+		border-color: #BCE8F1;
+		padding: 15px;
+		margin-bottom: 20px;
+		border: 1px solid rgba(0, 0, 0, 0);
+		border-radius: 4px;
+	}
+}
+
+/*-------------------------------------------------
+TABLE STYLES
+-------------------------------------------------*/
+
+table, th, td {
+	border: 1px solid #D4E0EE;
+	border-collapse: collapse;
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	color: #555;
+}
+
+caption {
+	font-size: 150%;
+	font-weight: bold;
+	margin: 5px;
+}
+
+td, th {
+	padding: 4px;
+}
+
+thead th {
+	text-align: center;
+	background: #E6EDF5;
+	color: #4F76A3;
+	font-size: 100% !important;
+}
+
+tbody th {
+	font-weight: bold;
+}
+
+tbody tr { background: #FCFDFE; }
+
+tbody tr.odd { background: #F7F9FC; }
+
+table a:link {
+	color: #718ABE;
+	text-decoration: none;
+}
+
+table a:visited {
+	color: #718ABE;
+	text-decoration: none;
+}
+
+table a:hover {
+	color: #718ABE;
+	text-decoration: underline !important;
+}
+
+tfoot th, tfoot td {
+	font-size: 85%;
+}
+
+/*-------------------------------------------------
+BUTTON STYLES
+-------------------------------------------------*/
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid rgba(0, 0, 0, 0);
+	border-radius: 4px;
+}
+.btn-primary {
+	color: #FFF;
+	background-color: #428BCA;
+	border-color: #357EBD;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+	color: #FFF;
+	background-color: #3071A9;
+	border-color: #285E8E;
 }
